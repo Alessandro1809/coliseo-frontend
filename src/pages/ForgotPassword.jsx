@@ -3,14 +3,14 @@ import casco from '../assets/casco.webp'
  const ForgotPassword = () => {
   return (
     <>
-     <div className="mb-6 ">
+     <div className="mb-6 animate-fade-up animate-duration-1000">
       
       <h1 className="mb-6 text-6xl font-black tracking-wide text-gray-200">Recupera tu Acceso y no Pierdas <br/><span className="text-red-600 "> tus Clientes </span></h1>
       <h2 className="font-black tracking-wide text-transparent text-7xl from-rose-700 bg-gradient-to-b via-orange-600 to-red-800 bg-clip-text">COLISEO GYM</h2>
       
     </div>
 
-    <div className="px-5 py-10 my-5 mt-20 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl">
+    <div className="px-5 py-10 my-5 mt-20 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl animate-fade-up animate-duration-1000">
         <form action="" className="">
       
           <div>

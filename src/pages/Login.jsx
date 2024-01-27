@@ -5,7 +5,7 @@ import casco from '../assets/casco.webp'
   return (
    <>
   
-      <div className="mb-6 ">
+      <div className="animate-duration-1000 intemb-6 animate-fade-right">
       
         
 
@@ -15,7 +15,7 @@ import casco from '../assets/casco.webp'
         
       </div>
 
-      <div className="px-5 py-10 my-5 mt-20 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl">
+      <div className="px-5 py-10 my-5 mt-20 duration-1000 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl animate-fade-right">
         <form action="" className="">
           <div>
             <label htmlFor="email" className="block text-xl font-bold tracking-wider text-gray-300 uppercase">Email:</label>
@@ -40,9 +40,9 @@ import casco from '../assets/casco.webp'
           <Link to='/olvide-password' className="block my-5 tracking-wide text-center text-gray-400 transition-transform duration-500 hover:scale-105">Olvidé mi <span className="font-semibold tracking-wide text-gray-200">contraseña</span></Link>
         </nav>
         
-        <div className="flex justify-center">
+        <picture className="flex justify-center">
         <img src={casco} alt="Casco romano" className=" w-52"/>
-        </div>
+        </picture>
       </div>
       
       
