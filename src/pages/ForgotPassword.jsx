@@ -1,6 +1,46 @@
 import { Link } from "react-router-dom";
 import casco from '../assets/casco.webp'
+import { useState } from "react";
+import ErrorMsg from "../components/ErrorMsg";
+import clienteAxios from "../config/axios";
+
  const ForgotPassword = () => {
+
+  const [email,setEmail] = useState('');
+  const [errorMsg,setErrorMsg] = useState({});
+  
+  const handleSubmit= async (e)=>{
+    
+    e.preventDefault();
+    
+    if (email === '' || email.length < 6) {
+      setErrorMsg({
+        msg:'El correo es obligatorio',
+        error:true
+      });
+      return;
+    }
+
+    try {
+      const {data} = await clienteAxios.post('/entrenador/olvide-password',{email});
+      setErrorMsg({msg:data.msg});
+      setTimeout(() => {
+        setErrorMsg({});
+    }, 3000);
+    } catch (error) {
+      setErrorMsg({
+        msg:error.response.data.msg,
+        error:true
+      });
+      setTimeout(() => {
+        setErrorMsg({});
+    }, 3000);
+    }
+    
+  }
+
+  const {msg} = errorMsg;
+  
   return (
     <>
      <div className="mb-6 animate-fade-up animate-duration-1000">
@@ -12,13 +52,20 @@ import casco from '../assets/casco.webp'
     </div>
 
     <div className="px-5 py-10 my-5 mt-20 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl animate-fade-up animate-duration-1000">
-        <form action="" className="">
+        
+    {msg && <ErrorMsg
+        errorMsg={errorMsg}
+      />}
+
+        <form onSubmit={handleSubmit}>
       
           <div>
             <label htmlFor="email" className="block text-xl font-bold tracking-wider text-gray-300 uppercase">Email:</label>
-            <input type="text" 
+            <input type="email" 
                     placeholder='Email de registro'
-                    className="w-full p-3 mt-3 text-black placeholder-red-900 border rounded-md shadow-lg shadow-gray-600 bg-gray-50"/>
+                    className="w-full p-3 mt-3 text-black placeholder-red-900 border rounded-md shadow-lg shadow-gray-600 bg-gray-50"
+                    value={email}
+                    onChange={e=> setEmail(e.target.value)}/>
           </div>
           
 
