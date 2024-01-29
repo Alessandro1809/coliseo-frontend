@@ -5,8 +5,9 @@ import casco from '../assets/casco.webp'
     <>
      <div className="mb-6 animate-fade-up animate-duration-1000">
       
-      <h1 className="mb-6 text-6xl font-black tracking-wide text-gray-200">Recupera tu Acceso y no Pierdas <br/><span className="text-red-600 "> tus Clientes </span></h1>
-      <h2 className="font-black tracking-wide text-transparent text-7xl from-rose-700 bg-gradient-to-b via-orange-600 to-red-800 bg-clip-text">COLISEO GYM</h2>
+      <h1 className="mb-6 text-4xl font-black tracking-wide text-gray-200 sm:text-6xl">Recupera tu Acceso y no Pierdas <br/><span className="text-red-600 "> tus Clientes </span></h1>
+      
+      <h2 className="text-5xl font-black tracking-wide text-transparent sm:text-7xl from-rose-700 bg-gradient-to-b via-orange-600 to-red-800 bg-clip-text">COLISEO GYM</h2>
       
     </div>
 
@@ -22,8 +23,8 @@ import casco from '../assets/casco.webp'
           
 
           <input type="submit" 
-                    value='Enviar instrucciones'
-                    className="w-full px-10 py-3 mt-5 font-bold text-white uppercase transition-transform duration-500 shadow-lg rounded-xl bg-gradient-to-r from-orange-500 via-red-600 to-yellow-600 hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto"/>
+                    value='Enviar correo'
+                    className="w-full px-6 py-3 mt-5 font-bold text-white uppercase transition-transform duration-500 shadow-lg rounded-xl bg-gradient-to-r from-orange-500 via-red-600 to-yellow-600 hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto"/>
         </form>
 
         <nav className="mt-10 lg:flex lg:justify-between">

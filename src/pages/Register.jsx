@@ -54,8 +54,9 @@ const Register = () => {
     <>
       <div className="mb-6 animate-fade-left animate-duration-1000 ">
       
-      <h1 className="mb-6 text-6xl font-black tracking-wide text-gray-200">¿Listo para empezar? <br/><span className="text-red-600 ">Crea tu cuenta y Administra tus </span>Clientes.</h1>
-      <h2 className="font-black tracking-wide text-transparent text-7xl from-red-700 bg-gradient-to-b via-orange-700 to-orange-500 bg-clip-text">COLISEO GYM</h2>
+      <h1 className="mb-6 text-4xl font-black tracking-wide text-gray-200 sm:text-6xl">¿Listo para empezar? <br/><span className="text-red-600 ">Crea tu cuenta y Administra tus </span>Clientes.</h1>
+      
+      <h2 className="text-5xl font-black tracking-wide text-transparent sm:text-7xl from-red-700 bg-gradient-to-b via-orange-700 to-orange-500 bg-clip-text">COLISEO GYM</h2>
       
     </div>
 
