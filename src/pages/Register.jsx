@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ErrorMsg from "../components/ErrorMsg";
-import axios from 'axios';
+import clienteAxios from "../config/axios";
 const Register = () => {
 
   const [nombre,setNombre]=useState('');
@@ -33,9 +33,8 @@ const Register = () => {
     
     //Create user in API
     try {
-      const url ="http://localhost:4000/api/entrenador";
-      
-      await axios.post(url,{nombre,email,password,telefono});
+     
+      await clienteAxios.post('/entrenador',{nombre,email,password,telefono});
       setErrorMsg({
         msg:'Usuario registrado correctamente, revisa tu correo y confirma tu cuenta!', 
         error:false

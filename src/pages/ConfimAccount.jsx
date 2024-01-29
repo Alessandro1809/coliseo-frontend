@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
 import ErrorMsg from "../components/ErrorMsg";
+import clienteAxios from "../config/axios";
 
 const ConfimAccount = () => {
 
@@ -16,8 +16,8 @@ const ConfimAccount = () => {
     const confirmAccount = async ()=>{
       
       try {
-        const url =`http://localhost:4000/api/entrenador/verificar/${token}`;
-        const {data} = await axios(url);
+        const url =`/entrenador/verificar/${token}`;
+        const {data} = await clienteAxios(url);
 
         setCuentaConfirmada(true);
         
@@ -25,7 +25,7 @@ const ConfimAccount = () => {
           setErrorMsg({
             msg:data.msg
           });
-        }, 100);
+        }, 50);
 
         return;
       } catch (error) {
