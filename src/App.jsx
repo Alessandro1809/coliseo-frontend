@@ -13,8 +13,8 @@ function App() {
           <Route path='/' element={<AuthLayout/>}>
             <Route index element={<Login/>}/>
             <Route path='registrar' element={<Register/>}/>
-            <Route path='confirmar-cuenta' element={<ConfimAccount/>}/>
             <Route path='olvide-password' element={<ForgotPassword/>}/>
+            <Route path='confirmar-cuenta/:token' element={<ConfimAccount/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
