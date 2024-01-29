@@ -1,7 +1,8 @@
 import { useEffect,useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import ErrorMsg from "../components/ErrorMsg";
+
 const ConfimAccount = () => {
 
   const params = useParams();
@@ -13,18 +14,24 @@ const ConfimAccount = () => {
   useEffect(()=>{
 
     const confirmAccount = async ()=>{
+      
       try {
-        
         const url =`http://localhost:4000/api/entrenador/verificar/${token}`;
         const {data} = await axios(url);
 
         setCuentaConfirmada(true);
-        console.log(data.msg)
-        setErrorMsg({msg:data.msg});
         
+        setTimeout(() => {
+          setErrorMsg({
+            msg:data.msg
+          });
+        }, 100);
+
+        return;
       } catch (error) {
-        setErrorMsg({msg:error.response.data.msg,
-        error:true});
+          setErrorMsg({msg:error.response.data.msg,
+            error:true});
+        
       }
       setCargando(false);
     }
@@ -48,6 +55,12 @@ const ConfimAccount = () => {
     {!cargando && <ErrorMsg
       errorMsg={errorMsg}
     />}
+
+      {cuentaConfirmada && (
+                    <Link
+                      className='block my-5 font-black text-center text-gray-500 animate-fade-up animate-delay-500'
+                      to="/">Iniciar Sesión</Link>
+                  ) }
        
       </div>
     </>
