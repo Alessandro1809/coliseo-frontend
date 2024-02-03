@@ -6,12 +6,16 @@ const AuthContext = createContext();
 const AuthProvider=({children})=>{
 
     const [auth, setAuth]=useState({});
+    const [charging,setCharging]= useState(true);
 
     useEffect(()=>{
         const authUser = async ()=>{
            const token = localStorage.getItem('coliseo_temp_token_');
             //validation of token before auth
-           if (!token) return;
+           if (!token){
+            setCharging(false);
+            return ;
+           }
            //headers config
             const config ={
                 headers:{
@@ -31,9 +35,11 @@ const AuthProvider=({children})=>{
                 //in case of error set setAuth as {}
                 setAuth({});
             }
+            setCharging(false);
 
            
         }
+
         authUser();
     },[])
     //Define what we want or need avaiable
@@ -41,7 +47,8 @@ const AuthProvider=({children})=>{
         <AuthContext.Provider
         value={{
             auth,
-            setAuth
+            setAuth,
+            charging
         }}>
             {children}
         </AuthContext.Provider>
