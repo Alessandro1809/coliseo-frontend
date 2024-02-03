@@ -1,7 +1,45 @@
-import { Link } from "react-router-dom";
-import casco from '../assets/casco.webp'
+import { Link,useNavigate } from "react-router-dom";
+import casco from '../../assets/casco.webp'
+import { useState } from "react";
+import ErrorMsg from "../../components/ErrorMsg";
+import clienteAxios from "../../config/axios";
  const Login = () => {
-  
+    const [email,setEmail]= useState('');
+    const [password,setPassword]= useState('');
+    const [alerta,setAlerta]= useState({});
+    
+    
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e)=>{
+      e.preventDefault();
+        //validation
+      if ([email,password].includes('')) {
+        setAlerta({
+          msg:'todos los campos son obligatorios',
+          error:true
+        });
+        return;
+        
+      }
+      try {
+        const {data} = await clienteAxios.post('entrenador/autenticar',{email,password});
+        //send token to localstorage temp
+        localStorage.setItem('coliseo_temp_token_', data.token);
+        
+        navigate('/admin');
+        
+      } catch (error) {
+        setAlerta({
+          msg:error.response.data.msg,
+          error:true
+        })
+      }
+      
+    }
+
+
+    const {msg} =alerta;
   return (
    <>
   
@@ -17,18 +55,25 @@ import casco from '../assets/casco.webp'
       </div>
 
       <div className="px-5 py-10 my-5 mt-20 duration-1000 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl animate-fade-right">
-        <form action="" className="">
+      {msg && <ErrorMsg
+        errorMsg={alerta}
+      />}
+        <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email" className="block text-xl font-bold tracking-wider text-gray-300 uppercase">Email:</label>
             <input type="text" 
                     placeholder='Email de registro'
-                    className="w-full p-3 mt-3 text-black placeholder-red-900 border rounded-md shadow-lg shadow-gray-600 bg-gray-50"/>
+                    className="w-full p-3 mt-3 text-black placeholder-red-900 border rounded-md shadow-lg shadow-gray-600 bg-gray-50"
+                    value={email}
+                    onChange={e=>setEmail(e.target.value)}/>
           </div>
           <div className="my-4">
             <label htmlFor="password" className="block text-xl font-bold tracking-wider text-gray-300 uppercase">Contraseña:</label>
             <input type="password" 
                     placeholder='Contraseña'
-                    className="w-full p-3 mt-3 text-black placeholder-red-900 border rounded-md shadow-lg shadow-gray-600 bg-gray-50"/>
+                    className="w-full p-3 mt-3 text-black placeholder-red-900 border rounded-md shadow-lg shadow-gray-600 bg-gray-50"
+                    value={password}
+                    onChange={e=>setPassword(e.target.value)}/>
           </div>
 
           <input type="submit" 

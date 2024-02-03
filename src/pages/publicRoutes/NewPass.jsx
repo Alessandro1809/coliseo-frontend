@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
-import ErrorMsg from "../components/ErrorMsg";
+import ErrorMsg from "../../components/ErrorMsg";
 import { useParams, Link } from "react-router-dom";
-import clienteAxios from "../config/axios";
+import clienteAxios from "../../config/axios";
 const NewPass = () => {
 
   const [password,setPassword]=useState('');

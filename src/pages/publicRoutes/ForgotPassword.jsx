@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import casco from '../assets/casco.webp'
+import casco from '../../assets/casco.webp'
 import { useState } from "react";
-import ErrorMsg from "../components/ErrorMsg";
-import clienteAxios from "../config/axios";
+import ErrorMsg from "../../components/ErrorMsg";
+import clienteAxios from "../../config/axios";
 
  const ForgotPassword = () => {
 

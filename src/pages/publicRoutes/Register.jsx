@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ErrorMsg from "../components/ErrorMsg";
-import clienteAxios from "../config/axios";
+import ErrorMsg from "../../components/ErrorMsg";
+import clienteAxios from "../../config/axios";
 const Register = () => {
 
   const [nombre,setNombre]=useState('');

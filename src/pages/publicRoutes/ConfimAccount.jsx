@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import ErrorMsg from "../components/ErrorMsg";
-import clienteAxios from "../config/axios";
+import ErrorMsg from "../../components/ErrorMsg";
+import clienteAxios from "../../config/axios";
 
 const ConfimAccount = () => {
 
