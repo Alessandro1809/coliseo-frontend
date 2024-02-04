@@ -13,21 +13,23 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <AuthProvider>
-          <Routes>
-            <Route path='/' element={<AuthLayout/>}>
-              <Route index element={<Login/>}/>
-              <Route path='registrar' element={<Register/>}/>
-              <Route path='olvide-password' element={<ForgotPassword/>}/>
-              <Route path='olvide-password/:token' element={<NewPass/>}/>
-              <Route path='confirmar-cuenta/:token' element={<ConfimAccount/>}/>
-            </Route>
+        <AuthProvider>
+            <Routes>
+              
+              <Route path='/' element={<AuthLayout/>}>
+                <Route index element={<Login/>}/>
+                <Route path='registrar' element={<Register/>}/>
+                <Route path='olvide-password' element={<ForgotPassword/>}/>
+                <Route path='olvide-password/:token' element={<NewPass/>}/>
+                <Route path='confirmar-cuenta/:token' element={<ConfimAccount/>}/>
+              </Route>
 
-            <Route path='/admin' element={<ProtectedLayout/>} >
-            <Route index element={<ClientsAdmin/>}/>
-            </Route>
-          </Routes>
-        </AuthProvider>
+              <Route path='/admin' element={<ProtectedLayout/>} >
+                <Route index element={<ClientsAdmin/>}/>
+              </Route>
+
+            </Routes>
+          </AuthProvider>
       </BrowserRouter>
     </>
   )

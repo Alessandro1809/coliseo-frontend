@@ -60,10 +60,12 @@ const NewPass = () => {
   return (
    <>
     <div className="mb-6 animate-fade-left animate-duration-1000 ">
-      
-        <h1 className="mb-6 text-4xl font-black tracking-wide text-gray-200 sm:text-6xl">Reestablece tus Credenciales <br/><span className="text-red-600 ">No Pierdas Acceso a </span> tus Clientes.</h1>
+
+    <h2 className="mb-6 text-4xl font-black tracking-wide text-transparent sm:text-7xl from-red-700 bg-gradient-to-l via-orange-700 to-orange-500 bg-clip-text">FITFLARE</h2>
+    
+        <h1 className="text-3xl font-black tracking-wide text-gray-200 sm:text-6xl">Reestablece tus Credenciales <br/><span className="text-red-600 ">No Pierdas Acceso a </span> tus Clientes.</h1>
         
-        <h2 className="text-5xl font-black tracking-wide text-transparent sm:text-7xl from-red-700 bg-gradient-to-b via-orange-700 to-orange-500 bg-clip-text">COLISEO GYM</h2>
+       
       
     </div>
       

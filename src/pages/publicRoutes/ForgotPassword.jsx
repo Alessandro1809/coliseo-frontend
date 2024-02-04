@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import casco from '../../assets/casco.webp'
+import logo from '../../assets/logo_fitflare.webp'
 import { useState } from "react";
 import ErrorMsg from "../../components/ErrorMsg";
 import clienteAxios from "../../config/axios";
@@ -44,10 +44,10 @@ import clienteAxios from "../../config/axios";
   return (
     <>
      <div className="mb-6 animate-fade-up animate-duration-1000">
+     <h2 className="mb-6 text-4xl font-black tracking-wide text-transparent sm:text-7xl from-yellow-700 bg-gradient-to-l via-orange-600 to-yellow-500 bg-clip-text">FITFLARE</h2>
+      <h1 className="text-3xl font-black tracking-wide text-gray-200  sm:text-6xl">Recupera tu Acceso y no Pierdas <br/><span className="text-red-600 "> tus Clientes </span></h1>
       
-      <h1 className="mb-6 text-4xl font-black tracking-wide text-gray-200 sm:text-6xl">Recupera tu Acceso y no Pierdas <br/><span className="text-red-600 "> tus Clientes </span></h1>
       
-      <h2 className="text-5xl font-black tracking-wide text-transparent sm:text-7xl from-rose-700 bg-gradient-to-b via-orange-600 to-red-800 bg-clip-text">COLISEO GYM</h2>
       
     </div>
 
@@ -80,7 +80,7 @@ import clienteAxios from "../../config/axios";
         </nav>
         
         <div className="flex justify-center">
-        <img src={casco} alt="Casco romano" className=" w-52"/>
+        <img src={logo} alt="Casco romano" className=" w-52"/>
         </div>
        
       </div></>

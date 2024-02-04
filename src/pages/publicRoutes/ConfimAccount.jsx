@@ -44,9 +44,10 @@ const ConfimAccount = () => {
   return (
     <>
       <div className="mb-6 animate-fade-left animate-duration-1000 ">
+      <h2 className="mb-6 text-4xl font-black tracking-wide text-transparent sm:text-6xl from-red-700 bg-gradient-to-l via-orange-700 to-yellow-500 bg-clip-text">FITFLARE</h2>
       
-      <h1 className="mb-6 text-6xl font-black tracking-wide text-gray-200">¡Genial!<br/><span className="text-red-600 ">Confirma tu cuenta y comienza a administrar tus </span>Clientes.</h1>
-      <h2 className="font-black tracking-wide text-transparent text-7xl from-red-700 bg-gradient-to-b via-orange-700 to-orange-500 bg-clip-text">COLISEO GYM</h2>
+      <h1 className="text-6xl font-black tracking-wide text-gray-200 ">¡Genial!<br/><span className="text-red-600 ">Confirma tu cuenta y comienza a administrar tus </span>Clientes.</h1>
+     
       
     </div>
 

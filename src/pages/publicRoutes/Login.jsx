@@ -1,13 +1,16 @@
 import { Link,useNavigate } from "react-router-dom";
-import casco from '../../assets/casco.webp'
+import logo from '../../assets/logo_fitflare.webp'
 import { useState } from "react";
 import ErrorMsg from "../../components/ErrorMsg";
 import clienteAxios from "../../config/axios";
+
  const Login = () => {
+  
     const [email,setEmail]= useState('');
     const [password,setPassword]= useState('');
     const [alerta,setAlerta]= useState({});
     
+
     
     const navigate = useNavigate();
 
@@ -25,8 +28,8 @@ import clienteAxios from "../../config/axios";
       try {
         const {data} = await clienteAxios.post('entrenador/autenticar',{email,password});
         //send token to localstorage temp
-        localStorage.setItem('coliseo_temp_token_', data.token);
-        
+        localStorage.setItem('fitflare_token', data.token);
+       
         navigate('/admin');
         
       } catch (error) {
@@ -46,10 +49,11 @@ import clienteAxios from "../../config/axios";
       <div className="animate-duration-1000 intemb-6 animate-fade-right">
       
         
-
-        <h1 className="mb-6 text-4xl font-black tracking-wide text-gray-200 sm:text-6xl">Bienvenido! <span className="text-red-600 ">Inicia Sesión y Administra tus </span>Clientes.</h1>
+      <h2 className="mb-6 text-4xl font-black tracking-wide text-transparent sm:text-6xl from-red-700 bg-gradient-to-l via-orange-700 to-yellow-500 bg-clip-text">FITFLARE</h2>
+      
+        <h1 className="text-3xl font-black tracking-wide text-gray-200 sm:text-6xl">Bienvenido! <span className="text-red-600 ">Inicia Sesión y Administra tus </span>Clientes.</h1>
         
-        <h2 className="text-5xl font-black tracking-wide text-transparent sm:text-6xl from-red-700 bg-gradient-to-b via-orange-700 to-orange-500 bg-clip-text">COLISEO GYM</h2>
+        
         
         
       </div>
@@ -87,7 +91,7 @@ import clienteAxios from "../../config/axios";
         </nav>
         
         <picture className="flex justify-center">
-        <img src={casco} alt="Casco romano" className=" w-52"/>
+        <img src={logo} alt="Casco romano" className=" w-52"/>
         </picture>
       </div>
       
