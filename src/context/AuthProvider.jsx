@@ -21,7 +21,7 @@ const AuthProvider=({children})=>{
            if (!token){
             setCharging(false);
 
-            return
+            return;
            }
            //headers config
             const config ={

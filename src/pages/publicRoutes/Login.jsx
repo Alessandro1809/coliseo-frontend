@@ -10,7 +10,7 @@ import clienteAxios from "../../config/axios";
     const [password,setPassword]= useState('');
     const [alerta,setAlerta]= useState({});
     
-
+   
     
     const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ import clienteAxios from "../../config/axios";
         const {data} = await clienteAxios.post('entrenador/autenticar',{email,password});
         //send token to localstorage temp
         localStorage.setItem('fitflare_token', data.token);
-       
+      
         navigate('/admin');
         
       } catch (error) {
