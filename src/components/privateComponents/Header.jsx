@@ -4,10 +4,13 @@ import Menu from "../Iconos/Menu";
 import Close from "../Iconos/Close";
 import CloseSesion from "../Iconos/CloseSesion";
 import { useState, useEffect } from "react";
-
+import useAuth from "../../hooks/useAuth";
 const Header = () => {
+  
   const [isTopVisible, setTopVisible] = useState(false);
   const [isMdScreen, setIsMdScreen] = useState(false);
+  
+  const {closeSesion}=useAuth();
   // Funciones para manejar el cambio de visibilidad
   const toggleTop = () => setTopVisible(!isTopVisible);
   
@@ -28,6 +31,7 @@ const Header = () => {
       mediaQuery.removeListener(handleMediaQueryChange);
     };
   }, []);
+  
   return (
     <>
         <header id="header-nav" className="fixed top-0 z-50 w-full px-6 py-4">
@@ -76,7 +80,8 @@ const Header = () => {
               
               
               </nav>
-              <button className="w-auto text-sm transition-all duration-200 md:w-32 hover:scale-105 md:text-xs ">
+              <button className="w-auto text-sm transition-all duration-200 md:w-32 hover:scale-105 md:text-xs "
+              onClick={closeSesion}>
               <div className="p-0.5 bg-gradient-to-r from-yellow-500 to-rose-500 bg-clip-border rounded-full">
             <div className="text-white bg-black rounded-full ">
               <span >{isMdScreen ? (

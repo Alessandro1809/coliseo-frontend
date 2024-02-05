@@ -46,13 +46,20 @@ const AuthProvider=({children})=>{
         }
         authUser();
     },[]);
+
+    const closeSesion=()=>{
+        localStorage.removeItem('fitflare_token');
+        setAuth({});
+    }
+
     //Define what we want or need avaiable
     return(
         <AuthContext.Provider
         value={{
             auth,
             setAuth,
-            charging
+            charging,
+            closeSesion
         }}>
             {children}
         </AuthContext.Provider>
