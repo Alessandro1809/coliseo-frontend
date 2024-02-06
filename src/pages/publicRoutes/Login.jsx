@@ -1,12 +1,12 @@
 import { Link,useNavigate } from "react-router-dom";
 import logo from '../../assets/logo_fitflare.webp'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ErrorMsg from "../../components/ErrorMsg";
 import clienteAxios from "../../config/axios";
 import useAuth from "../../hooks/useAuth";
 
  const Login = () => {
-  
+    
     const [email,setEmail]= useState('');
     const [password,setPassword]= useState('');
     const [alerta,setAlerta]= useState({});
@@ -38,9 +38,16 @@ import useAuth from "../../hooks/useAuth";
       }
       
     }
-
-
+    
     const {msg} =alerta;
+
+    
+    useEffect(()=>{
+  
+     
+    },[]);
+  
+    
   return (
    <>
   
