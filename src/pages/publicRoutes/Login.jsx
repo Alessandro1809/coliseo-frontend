@@ -3,17 +3,15 @@ import logo from '../../assets/logo_fitflare.webp'
 import { useState } from "react";
 import ErrorMsg from "../../components/ErrorMsg";
 import clienteAxios from "../../config/axios";
+import useAuth from "../../hooks/useAuth";
 
  const Login = () => {
   
     const [email,setEmail]= useState('');
     const [password,setPassword]= useState('');
     const [alerta,setAlerta]= useState({});
-    
-   
-    
     const navigate = useNavigate();
-
+    const {setAuth}=useAuth();
     const handleSubmit = async (e)=>{
       e.preventDefault();
         //validation
@@ -29,7 +27,7 @@ import clienteAxios from "../../config/axios";
         const {data} = await clienteAxios.post('entrenador/autenticar',{email,password});
         //send token to localstorage temp
         localStorage.setItem('fitflare_token', data.token);
-      
+        setAuth(data);
         navigate('/admin');
         
       } catch (error) {
@@ -52,10 +50,7 @@ import clienteAxios from "../../config/axios";
       <h2 className="mb-6 text-4xl font-black tracking-wide text-transparent sm:text-6xl from-red-700 bg-gradient-to-l via-orange-700 to-yellow-500 bg-clip-text">FITFLARE</h2>
       
         <h1 className="text-3xl font-black tracking-wide text-gray-200 sm:text-6xl">Bienvenido! <span className="text-red-600 ">Inicia Sesión y Administra tus </span>Clientes.</h1>
-        
-        
-        
-        
+         
       </div>
 
       <div className="px-5 py-10 my-5 mt-20 duration-1000 shadow-lg md:mt-5 rounded-xl shadow-orange-600 backdrop-blur-3xl animate-fade-right">

@@ -7,9 +7,10 @@ const ProtectedLayout = () => {
 
   const {auth,charging} =useAuth();
   
-  if (charging)
-  return 'cargando...'
-
+  if (charging){
+    console.log(charging)
+    return 'cargando...'
+  }
   
   return (
     <>

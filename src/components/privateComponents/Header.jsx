@@ -1,10 +1,11 @@
-import { Link} from "react-router-dom";
+import { useState, useEffect } from "react";
 import logo from '../../assets/logo_fitflare.webp'
 import Menu from "../Iconos/Menu";
 import Close from "../Iconos/Close";
 import CloseSesion from "../Iconos/CloseSesion";
-import { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
+import NavLinks from "./NavLinks";
+
 const Header = () => {
   
   const [isTopVisible, setTopVisible] = useState(false);
@@ -55,11 +56,7 @@ const Header = () => {
       >
                <section className="flex flex-col gap-12 text-3xl font-medium tracking-wider text-center text-white py-28 text-pretty">
 
-                 <Link to='/admin' className="text_glowing">Inicio</Link>
-                  <Link to='/admin' className="text_glowing">Clientes</Link>
-                  <Link to='/admin' className="text_glowing">Membresias</Link>
-                  <Link to='/admin' className="text_glowing">Perfil</Link>
-                  <Link to='/admin' className="text_glowing">Contacto</Link>                
+                 <NavLinks/>                
                </section>
       </div>
 
@@ -71,14 +68,8 @@ const Header = () => {
               
                 className="fixed w-full h-dvh inset-0 text-2xl flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:text-xl md:flex-row md:translate-y-[initial] text-white"
               >
-                <Link to='/admin' className="text_glowing">Inicio</Link>
-                <Link to='/admin' className="text_glowing">Clientes</Link>
-                <Link to='/admin' className="text_glowing">Membresias</Link>
-                <Link to='/admin' className="text_glowing">Perfil</Link>
-                <Link to='/admin' className="text_glowing">Contacto</Link>
-                
-              
-              
+                <NavLinks/>     
+
               </nav>
               <button className="w-auto text-sm transition-all duration-200 md:w-32 hover:scale-105 md:text-xs "
               onClick={closeSesion}>

@@ -15,27 +15,25 @@ const AuthProvider=({children})=>{
 
         const authUser = async ()=>{
             
-            const token = localStorage.getItem('fitflare_token');
+            const fitflare_token = localStorage.getItem('fitflare_token');
             
             //validation of token before auth
-           if (!token){
-            setCharging(false);
-
-            return;
-           }
+            if (!fitflare_token){
+                setCharging(false);
+                return
+            }
            //headers config
             const config ={
                 headers:{
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${fitflare_token}`
                 }
             }
-
             try {
                     const {data}= await clienteAxios('/entrenador/perfil', config);
                     //define the session of the user
                     setAuth(data);
-                
+                    
             } catch (error) {
                 console.log(error.response.data.msg);
                 //in case of error set setAuth as {}
