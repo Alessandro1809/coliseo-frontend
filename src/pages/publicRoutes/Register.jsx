@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ErrorMsg from "../../components/ErrorMsg";
 import clienteAxios from "../../config/axios";
+import GoogleAuthButton from "../../components/GoogleAuthButton";
+
 const Register = () => {
 
   const [nombre,setNombre]=useState('');
@@ -112,7 +114,11 @@ const Register = () => {
 
           <input type="submit" 
                     value='Registrar'
-                    className="w-full px-10 py-3 mt-5 font-bold text-white uppercase transition-transform duration-500 shadow-lg rounded-xl bg-gradient-to-r from-orange-500 via-red-600 to-yellow-600 hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto"/>
+                    className="w-full px-10 py-3 mt-5 mb-6 font-bold text-white uppercase transition-transform duration-500 shadow-lg rounded-xl bg-gradient-to-r from-orange-500 via-red-600 to-yellow-600 hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto"/>
+
+          <span className="flex justify-center">
+          <GoogleAuthButton/>
+          </span>
         </form>
         
         <nav className="mt-10 lg:flex lg:justify-between">

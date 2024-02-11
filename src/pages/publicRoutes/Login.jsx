@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import ErrorMsg from "../../components/ErrorMsg";
 import clienteAxios from "../../config/axios";
 import useAuth from "../../hooks/useAuth";
-import Google from "../../components/Iconos/Google";
+import GoogleAuthButton from "../../components/GoogleAuthButton";
 
  const Login = () => {
     
@@ -14,16 +14,6 @@ import Google from "../../components/Iconos/Google";
     const navigate = useNavigate();
     const {setAuth}=useAuth();
 
-    const logginWithGoogle= async (e)=>{
-      e.preventDefault();
-     
-      
-      try {
-        await clienteAxios('/entrenador/auth/google/callback');
-      } catch (error) {
-        console.log(error.msg)
-      }
-    }
     
     const handleSubmit = async (e)=>{
       e.preventDefault();
@@ -97,10 +87,11 @@ import Google from "../../components/Iconos/Google";
           
           <input type="submit" 
                     value='Iniciar sesión'
-                    className="w-full px-6 py-3 mt-5 font-bold text-white uppercase transition-transform duration-500 shadow-lg rounded-xl bg-gradient-to-r from-orange-500 via-red-600 to-yellow-600 hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto"/>
+                    className="w-full px-6 py-3 mt-5 mb-6 font-bold text-white uppercase transition-transform duration-500 shadow-lg rounded-xl bg-gradient-to-r from-orange-500 via-red-600 to-yellow-600 hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto animate-ease-in-out"/>
         <div className="flex justify-center">
-        <button className="w-full p-2 mt-5 font-bold text-white uppercase transition-transform duration-500 bg-black border rounded-full shadow-lg hover:cursor-pointer hover:scale-105 shadow-yellow-600 md:w-auto"
-          onClick={logginWithGoogle}> <Google/></button>
+      
+       <GoogleAuthButton/>
+        
         </div>
         </form>
 

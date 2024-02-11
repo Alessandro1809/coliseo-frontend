@@ -8,10 +8,12 @@ import NewPass from './pages/publicRoutes/NewPass';
 import { AuthProvider } from './context/AuthProvider';
 import ProtectedLayout from './layout/ProtectedLayout';
 import ClientsAdmin from './pages/privateRoutes/ClientsAdmin';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 function App() {
   
   return (
     <>
+    <GoogleOAuthProvider clientId="903352777938-truc1nmqquvepjmor79749k3fhgr7sbv.apps.googleusercontent.com">
       <BrowserRouter>
         <AuthProvider>
             <Routes>
@@ -31,6 +33,7 @@ function App() {
             </Routes>
           </AuthProvider>
       </BrowserRouter>
+      </GoogleOAuthProvider>
     </>
   )
 }
