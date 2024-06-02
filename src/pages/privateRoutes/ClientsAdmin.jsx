@@ -8,10 +8,10 @@ const ClientsAdmin = () => {
           <img src={logo} alt="FITFLARE_LOGO" className='w-32' />
         </picture>
         <h1 className="-mt-8 text-lg tracking-wider">FITFLARE</h1>
+        <p>Gestiona ◉ Motiva ◉ Supera</p>
         
-        <Bento/>
      </section>
-     
+     <Bento/>
     </>
   )
 }
