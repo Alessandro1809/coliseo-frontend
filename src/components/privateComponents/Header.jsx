@@ -51,13 +51,13 @@ const Header = () => {
 
       {/* Offcanvas Top */}
       <div
-        className={`fixed top-0 inset-x-0 transition-all duration-1000 transform ${isTopVisible ? 'translate-y-0' : '-translate-y-full'} max-h-960 h-full w-full z-80 border-b bg-red-800/90 dark:border-gray-700 ${isTopVisible ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`fixed top-0 inset-x-0 transition-all duration-1000 transform ${isTopVisible ? 'translate-y-0' : '-translate-y-full'} max-h-960 h-[100vh] w-full z-80 border-b bg-red-800/90 dark:border-gray-700 ${isTopVisible ? 'translate-y-0' : '-translate-y-full'}`}
         tabIndex="-1"
       >
-               <section className="flex flex-col gap-12 text-3xl font-medium tracking-wider text-center text-white py-28 text-pretty">
-
-                 <NavLinks/>                
-               </section>
+          <div className="grid justify-center text-center pt-24 text-white gap-10 text-2xl" >
+            <NavLinks/>
+          </div>  
+        
       </div>
 
       

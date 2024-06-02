@@ -11,11 +11,11 @@ const Bento = () => {
                         <p>¡Crea rutinas de ejercicios y administralas de manera sencilla!</p>
                         <div className="h-0.5 w-full bg-[#ffd3d3] mt-3"></div>
                     </article>
-                    <footer className="flex justify-between mx-10 my-4">
-                        <button className="w-auto h-8 rounded-md bg-[#ffd3d3] hover:bg-[#ffd3d3]/70 cursor-pointer p-2 items-center text-center text-[#202020] transition-all hover:scale-105">Crear rutinas</button>
+                    <div className="z-50 flex justify-between mx-10 my-4">
+                        <button className="w-auto h-8 rounded-md bg-[#ffd3d3] hover:bg-[#ffd3d3]/70 p-2  text-[#202020] transition-all hover:scale-105">Crear rutinas</button>
                         
                         <button className="w-auto h-8 rounded-md hover:bg-[#ffd3d3]/40 hover:cursor-pointer">Editar rutinas</button>    
-                    </footer>
+                    </div>
                 </div>
             </article>
             <article className="col-span-2  w-full ">
