@@ -37,3 +37,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  * {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: weight(700);
+    font-style: normal;
+  }

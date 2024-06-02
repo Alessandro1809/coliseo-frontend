@@ -1,4 +1,5 @@
 import logo from '../../assets/logo_fitflare.webp'
+import Bento from '../../components/privateComponents/Bento';
 const ClientsAdmin = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const ClientsAdmin = () => {
         <h1 className="-mt-8 text-lg tracking-wider">FITFLARE</h1>
         <span>Gestiona, motiva, supera con FitFlare</span>
      </section>
+     <Bento/>
     </>
   )
 }

@@ -25,18 +25,18 @@ const Header = () => {
     handleMediaQueryChange(mediaQuery);
 
     // Escucha cambios en el media query
-    mediaQuery.addListener(handleMediaQueryChange);
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
 
     // Limpieza al desmontar el componente
     return () => {
-      mediaQuery.removeListener(handleMediaQueryChange);
+      mediaQuery.addEventListener('change', handleMediaQueryChange);
     };
   }, []);
   
   return (
     <>
-        <header id="header-nav" className="fixed top-0 z-50 w-full px-6 py-4">
-          <div className="flex items-center justify-between gap-12 mx-auto max-w-12xl">
+        <header id="header-nav" className="fixed top-0 z-50 w-full px-2 py-4">
+          <div className="flex items-center justify-between gap-8 mx-auto max-w-12xl">
           <img src={logo} alt="FITFLARE_LOGO" className='w-16' />
           <div className="flex justify-center md:hidden lg:hidden">
           <div>
@@ -71,18 +71,18 @@ const Header = () => {
                 <NavLinks/>     
 
               </nav>
-              <button className="w-auto text-sm transition-all duration-200 md:w-32 hover:scale-105 md:text-xs "
+              <button className="w-auto text-sm transition-all duration-200 md:w-52 hover:scale-105 md:text-xs "
               onClick={closeSesion}>
-              <div className="p-0.5 bg-gradient-to-r from-yellow-500 to-rose-500 bg-clip-border rounded-full">
-            <div className="text-white bg-black rounded-full ">
-              <span >{isMdScreen ? (
-        <p>Cerrar Sesión</p>
-      ) : (
-        <CloseSesion/>
-      )}</span>
-            </div>
-          </div>
-      </button>
+                <div className="p-0.5  bg-gradient-to-r from-yellow-500 to-rose-500 bg-clip-border rounded-full h-11">
+                      <div className="p-2 text-white bg-black rounded-full h-10 items-center justify-center flex text-sm ">
+                          <span >{isMdScreen ? (
+                            <p>Cerrar Sesión</p>
+                        ) : (
+                          <CloseSesion/>
+                        )}</span>
+                      </div>
+                </div>
+              </button>
             </div>
               
    </header> 
