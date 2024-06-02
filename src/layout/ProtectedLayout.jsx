@@ -16,11 +16,11 @@ const ProtectedLayout = () => {
     <>
     <Header/>
       {auth?._id?  (
-      <body>
+      <main>
         <div className="mx-auto text-white relative inset-0  w-full  [background:radial-gradient(125%_125%_at_50%_10%,#000_30%,#990000_95%)] max-h-fit min-h-full ">
         <Outlet/>
         </div>
-      </body> 
+      </main> 
       ): <Navigate to='/'/>}
     <Footer/>
     </>
