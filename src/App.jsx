@@ -6,9 +6,11 @@ import ConfimAccount from './pages/publicRoutes/ConfimAccount';
 import ForgotPassword from './pages/publicRoutes/ForgotPassword';
 import NewPass from './pages/publicRoutes/NewPass';
 import { AuthProvider } from './context/AuthProvider';
+import { ClientsProvider } from './context/ClientsProvider';
 import ProtectedLayout from './layout/ProtectedLayout';
 import ClientsAdmin from './pages/privateRoutes/ClientsAdmin';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+
 function App() {
   
   return (
@@ -16,6 +18,7 @@ function App() {
     <GoogleOAuthProvider clientId="903352777938-truc1nmqquvepjmor79749k3fhgr7sbv.apps.googleusercontent.com">
       <BrowserRouter>
         <AuthProvider>
+          <ClientsProvider>
             <Routes>
               
               <Route path='/' element={<AuthLayout/>}>
@@ -31,6 +34,7 @@ function App() {
               </Route>
 
             </Routes>
+            </ClientsProvider>
           </AuthProvider>
       </BrowserRouter>
       </GoogleOAuthProvider>

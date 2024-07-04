@@ -6,7 +6,7 @@
 
     useEffect(() => {
       const getClients = async () => {
-        const response = await clienteAxios("/api/cliente");
+        const response = await clienteAxios("/cliente");
         const data = await response.json();
         setClients(data);
       }
