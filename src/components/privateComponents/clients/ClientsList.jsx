@@ -6,9 +6,13 @@
 
     useEffect(() => {
       const getClients = async () => {
-        const response = await clienteAxios("/cliente");
-        const data = await response.json();
+        try { 
+          const { data } = await clienteAxios("/cliente");
+        
         setClients(data);
+        } catch (error) {
+          console.log(error);
+        }
       }
       getClients();
     }, []);
